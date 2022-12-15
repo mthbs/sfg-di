@@ -1,11 +1,15 @@
 package guru.springframework.sfgdi.services;
 
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Service;
+import guru.springframework.sfgdi.repositories.SpanishGreetingRepository;
 
-@Profile( "ES")
-@Service("i18nService")
+
 public class I18nSpanishGreetingService implements GreetingService{
+
+    private final SpanishGreetingRepository spanishGreetingRepository;
+
+    public I18nSpanishGreetingService(SpanishGreetingRepository spanishGreetingRepository) {
+        this.spanishGreetingRepository = spanishGreetingRepository;
+    }
 
     @Override
     public String sayGreeting() {
