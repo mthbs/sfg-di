@@ -1,5 +1,6 @@
 package guru.springframework.sfgdi;
 
+import guru.springframework.sfgdi.config.SfgConfiguration;
 import guru.springframework.sfgdi.controllers.ConstructorInjectedController;
 import guru.springframework.sfgdi.controllers.I18nController;
 import guru.springframework.sfgdi.controllers.MyController;
@@ -67,11 +68,17 @@ public class SfgDiApplication {
 		System.out.println(prototypeBean2.getMyScope());
 
 
-		System.out.println("------------ Fake Data Source ---- Properties");
+		System.out.println("------------ Fake Data Source ----- Properties (YAML and .properties)");
 		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
 		System.out.println("Username: "+fakeDataSource.getUsername());
 		System.out.println("Password: "+fakeDataSource.getPassword());
 		System.out.println("Jdbc-Url: "+fakeDataSource.getJdbcurl());
+
+		System.out.println("----------- Config Props Bean");
+		SfgConfiguration sfgConfiguration = ctx.getBean(SfgConfiguration.class);
+		System.out.println("Username: "+sfgConfiguration.getUsername());
+		System.out.println("Password: "+sfgConfiguration.getPassword());
+		System.out.println("Jdbc-Url: "+sfgConfiguration.getJdbcurl());
 
 	}
 
