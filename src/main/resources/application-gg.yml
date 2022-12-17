@@ -1,0 +1,4 @@
+guru:
+  username: yml-gg-superuser
+  password: yml-gg-dbPassword
+  jdbcurl: yml-gg-someUrlforDB
